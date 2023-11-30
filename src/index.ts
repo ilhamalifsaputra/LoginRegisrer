@@ -20,14 +20,17 @@ app.use(cookieParser());
 
 const server = http.createServer(app);
 
+//Informasi server sedang berjalan
 server.listen(8080, () =>{
     console.log('Server berhasil berjalan di http://localhost:8080/');
 });
 
+//Base URI MONGO
 const MONGO_URL = 'mongodb+srv://netrava:Indonesia45@cluster-1.ntofxpo.mongodb.net/?retryWrites=true&w=majority';
 
 mongoose.Promise = Promise;
 mongoose.connect(MONGO_URL);
 mongoose.connection.on('error', (error: Error) => console.log(error))
 
+//Tempat router berjalan
 app.use('/', router());
