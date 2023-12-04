@@ -18,12 +18,12 @@ app.use(compression());
 app.use(bodyParser.json());
 app.use(cookieParser());
 
-const server = http.createServer(app);
+
 
 //Informasi server sedang berjalan
-//Informasi server sedang berjalan
-server.listen(process.env.PORT || 8080, () =>{
-    console.log(`Server berhasil berjalan di ${process.env.APP_URL || 'http://localhost'}:${process.env.PORT || 8080}/`);
+const server = http.createServer(app);
+server.listen(process.env.PORT || 8000, () => {
+    console.log(`Server berhasil berjalan di ${process.env.APP_URL || 'http://localhost'}:${process.env.PORT || 8000}/`);
 });
 
 //Base URI MONGO
