@@ -22,8 +22,8 @@ app.use(cookieParser());
 
 //Informasi server sedang berjalan
 const server = http.createServer(app);
-server.listen(process.env.PORT || 8000, () => {
-    console.log(`Server berhasil berjalan di ${process.env.APP_URL || 'http://localhost'}:${process.env.PORT || 8000}/`);
+server.listen(process.env.PORT || 8080, () => {
+    console.log(`Server berhasil berjalan di ${process.env.APP_URL || 'http://localhost'}:${process.env.PORT || 8080}/`);
 });
 
 //Base URI MONGO
