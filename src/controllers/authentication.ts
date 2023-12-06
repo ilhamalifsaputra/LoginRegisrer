@@ -36,7 +36,7 @@ export const login = async (req: express.Request, res: express.Response) => {
         await user.save();
 
         // Mengatur cookie dengan token sesi
-        res.cookie('LOGIN-AUTH', user.authentication.sessionToken, { domain : '.bamboo-clone-401311.et.r.appspot.com', path: '/' });
+        res.cookie('LOGIN-AUTH', user.authentication.sessionToken, { domain : 'localhost', path: '/' });
 
         // Mengirim status 200 dan data pengguna
         return res.status(200).json(user);
