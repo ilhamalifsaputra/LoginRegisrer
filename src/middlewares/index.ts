@@ -1,18 +1,18 @@
 import express from 'express';
 import { get, merge } from 'lodash';
 
-import { getUsersBySessionToken } from '../db/users';
+import { getUsersByToken } from '../db/users';
 
 //Check Autentikasi
 export const isAuthenticated = async (req: express.Request, res: express.Response, next: express.NextFunction) => {
     try {
-        const sessionToken = req.cookies['LOGIN-AUTH'];
+        const token = req.cookies['LOGIN-AUTH']; // Mengubah "sessionToken" menjadi "token"
 
-        if (!sessionToken) {
+        if (!token) { // Mengubah "sessionToken" menjadi "token"
             return res.sendStatus(403);
         }
 
-        const existingUser = await getUsersBySessionToken(sessionToken);
+        const existingUser = await getUsersByToken(token); // Mengubah "getUsersBySessionToken" menjadi "getUsersByToken"
 
         if (!existingUser)  {
             return res.sendStatus(403);

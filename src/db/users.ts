@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema({
-    username: {
+    name: { // Mengubah "username" menjadi "name"
         type : String,
         required : true
     },
@@ -19,7 +19,7 @@ const userSchema = new mongoose.Schema({
             type: String,
             select: false
         },
-        sessionToken : {
+        token : { // Mengubah "sessionToken" menjadi "token"
             type: String,
             select: false
         },
@@ -34,9 +34,9 @@ export const getUsers = () => userModel.find();
 // Fungsi untuk mendapatkan pengguna berdasarkan email dari database
 export const getUsersByEmail = (email: string) => userModel.findOne({ email });
 
-// Fungsi untuk mendapatkan pengguna berdasarkan token sesi dari database
-export const getUsersBySessionToken = (sessionToken: string) => userModel.findOne({
-    'authentication.sessionToken': sessionToken,
+// Fungsi untuk mendapatkan pengguna berdasarkan token dari database
+export const getUsersByToken = (token: string) => userModel.findOne({ // Mengubah "getUsersBySessionToken" menjadi "getUsersByToken"
+    'authentication.token': token, // Mengubah "sessionToken" menjadi "token"
 });
 
 // Fungsi untuk mendapatkan pengguna berdasarkan ID dari database
