@@ -1,4 +1,4 @@
-# Dokumentasi Penggunaan API
+# Dokumentasi Penggunaan LoginRegisterAPI
 
 ## Autentikasi
 
