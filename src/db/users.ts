@@ -50,3 +50,4 @@ export const deleteUserById = (id: string) => userModel.findOneAndDelete({ _id: 
 
 // Fungsi untuk memperbarui pengguna berdasarkan ID di database
 export const updateUserById = (id: string, values: Record<string, any>) => userModel.findByIdAndUpdate(id, values);
+

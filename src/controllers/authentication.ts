@@ -1,4 +1,4 @@
-import { createUser, getUsersByEmail, getUserById } from '../db/users';
+import { createUser, getUsersByEmail } from '../db/users';
 import express from 'express';
 import { authentication, random } from '../helpers';
 
